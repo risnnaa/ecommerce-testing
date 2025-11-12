@@ -1,0 +1,29 @@
+{
+  "name": "ecommerce-testing",
+  "version": "1.0.0",
+  "description": "Manual &amp; Automation Testing Portfolio",
+  "main": "cypress.config.js",
+  "scripts": {
+    "cy:open": "cypress open --config-file cypress.config.js",
+    "cy:run": "cypress run --config-file cypress.config.js",
+    "cy:run:headed": "cypress run --headed --browser chrome --config-file cypress.config.js",
+    "pw:install": "npx playwright install --with-deps",
+    "pw:open": "playwright test --ui -c automation/playwright/playwright.config.js",
+    "pw:run": "playwright test -c automation/playwright/playwright.config.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risnnaa/ecommerce-testing.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/risnnaa/ecommerce-testing/issues"
+  },
+  "homepage": "https://github.com/risnnaa/ecommerce-testing#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.56.1",
+    "cypress": "^15.6.0"
+  }
+}
