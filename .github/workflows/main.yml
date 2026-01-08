@@ -1,0 +1,17 @@
+name: Cypress E2E Tests
+on: [push] # Test akan jalan setiap kali kamu push code
+
+jobs:
+  cypress-run:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Cypress run
+        # Menggunakan official action dari Cypress agar setup lebih mudah
+        uses: cypress-io/github-action@v6
+        with:
+          build: npm install
+          start: npm start # Sesuaikan dengan command untuk run web app kamu
+          wait-on: 'http://localhost:3000' # Tunggu sampai web app siap
