@@ -9,9 +9,9 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Cypress run
-        # Menggunakan official action dari Cypress agar setup lebih mudah
         uses: cypress-io/github-action@v6
         with:
-          build: npm install
-          start: npm start # Sesuaikan dengan command untuk run web app kamu
-          wait-on: 'http://localhost:3000' # Tunggu sampai web app siap
+              record: true # Mengaktifkan pelaporan ke cloud
+        env:
+                # Mengambil key yang kita simpan di Secrets tadi
+              CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
